@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import App from "./8DayForecast";
 import CurrentForecast from "./CurrentForecast";
 import HourlyChart from "./HourlyChart";
-
+import "../App.css";
 import {
   Container,
   Col,
@@ -20,6 +20,9 @@ import axios from "axios";
 import { locationData } from "../data";
 
 let count = 0;
+const WEATHER_API = "439d4b804bc8187953eb36d2a8c26a02";
+const LOC_API =
+  "pk.eyJ1Ijoic2hhc2hhbmtwYWwxOTA5IiwiYSI6ImNrY2xpbzFkYjI0YmozM284bWpscWE2dGkifQ.73L8TnT83Y5yAnBHfsaC0w";
 
 function WeatherHomePage(props) {
   const [data, setData] = useState([]);
@@ -35,7 +38,9 @@ function WeatherHomePage(props) {
     console.log("API Called");
     try {
       const res = await axios.get(
-        `https://openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${units}&appid=${process.env.WEATHER_API}`
+        `https://openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${units}&appid=${
+          process.env.WEATHER_API || WEATHER_API
+        }`
       );
       localStorage.setItem(
         "coords",
@@ -52,7 +57,7 @@ function WeatherHomePage(props) {
       const res = await axios.get(
         `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
           city
-        )}.json?access_token=${process.env.LOC_API}&limit=1`
+        )}.json?access_token=${process.env.LOC_API || LOC_API}&limit=1`
       );
       localStorage.setItem("locName", res.data.query[0]);
       return res.data;

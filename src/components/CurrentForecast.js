@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import moment from "moment";
 import { Button, ButtonGroup } from "react-bootstrap";
-
+import "../App.css";
 function degToCompass(num) {
   const val = parseInt(num / 22.5 + 0.5);
   const arr = [

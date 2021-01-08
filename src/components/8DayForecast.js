@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 import { Accordion, Card, Table } from "react-bootstrap";
-
+import "../App.css";
 function degToCompass(num) {
   const val = parseInt(num / 22.5 + 0.5);
   const arr = [

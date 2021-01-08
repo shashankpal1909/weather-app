@@ -2,8 +2,8 @@ import React from "react";
 import moment from "moment";
 import CanvasJSReact from "../canvasjs-3.2.6/canvasjs.react";
 import { Button, ButtonGroup } from "react-bootstrap";
+import "../App.css";
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
-
 class App extends React.Component {
   constructor(props) {
     super(props);
