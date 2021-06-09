@@ -20,7 +20,7 @@ import axios from "axios";
 import { locationData } from "../data";
 
 let count = 0;
-const WEATHER_API = "439d4b804bc8187953eb36d2a8c26a02";
+const WEATHER_API = "91420caffb02fc91f0ee976f3eeb549d";
 const LOC_API =
   "pk.eyJ1Ijoic2hhc2hhbmtwYWwxOTA5IiwiYSI6ImNrY2xpbzFkYjI0YmozM284bWpscWE2dGkifQ.73L8TnT83Y5yAnBHfsaC0w";
 
@@ -38,7 +38,7 @@ function WeatherHomePage(props) {
     console.log("API Called");
     try {
       const res = await axios.get(
-        `https://openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${units}&appid=${
+        `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${units}&appid=${
           process.env.WEATHER_API || WEATHER_API
         }`
       );

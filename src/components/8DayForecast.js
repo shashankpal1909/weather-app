@@ -78,7 +78,8 @@ function App(props) {
           <div>
             {item.other.pressure}hPa Humidity: {item.other.humidity}% UV:{" "}
             {item.other.uvi.toFixed(0)} Dew point:{" "}
-            {item.other.dew_point.toFixed(0)}°C
+            {item.other.dew_point.toFixed(0)}
+            {props.unit.temp}
           </div>
           <Table
             hover
